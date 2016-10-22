@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/dist/vue.min.js"></script>
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,92 +49,49 @@
                 <h1 class="text-center">Juan Camilo Zapata</h1>
                 <p class="text-center">Software Engineer passionate about web-development and writing clean reusable code.</p>
               </div>
+              <aside class="col-sm-12 col-md-8 col-lg-8">
+                <p class="text-center">Certified Scrum Master</p>
+              </aside>
             </div>
-            
+
         </div>
         <div role="tabpanel">
 
           <!-- Nav tabs -->
           <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#workexperience" aria-controls="workexperience" role="tab" data-toggle="tab">Work Experience</a></li>
-            <!--<li role="presentation"><a href="#projects" aria-controls="projects" role="tab" data-toggle="tab">Projects</a></li>
-            <li role="presentation"><a href="#skills" aria-controls="skills" role="tab" data-toggle="tab">Skills</a></li>-->
+            <!--<li role="presentation"><a href="#projects" aria-controls="projects" role="tab" data-toggle="tab">Projects</a></li>-->
+            <!--<li role="presentation"><a href="#skills" aria-controls="skills" role="tab" data-toggle="tab">Skills</a></li>-->
           </ul>
 
           <!-- Tab panes -->
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="workexperience">
-              <div class="col-sm-12 col-md-12 col-lg-12">
-                <h2>Noise Birds Digital <small>2013 - Now</small></h2>
-                <h3>Technical Director</h3>
-                <p>I was brought into Noise Birds to lead the development of mutiple sites using Wordpress and Drupal aswell as organizing our development infrastructure. With Noise Birds we are create reliable, scalable custom sites that integrates with mutiple third parties.</p>
-                <p>Our focus with all the developed sites was for a non-technical person to be able to edit the content of their website without the fear of breaking them and also with this user in mind so that the UX of the backend is as simple as possible</p>
+              <div v-for="exp in exps">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                  <h2>{{exp.title}} <small>{{exp.from}} - {{exp.to}}</small></h2>
+                  <h3>{{exp.position}}</h3>
+                  <div v-html="exp.description"></div>
+                </div>
+                <aside class="col-sm-12 col-md-12 col-lg-12">
+                  <p>{{exp.aside}}</p>
+                </aside>
+                <hr>
               </div>
-              <aside class="col-sm-12 col-md-12 col-lg-12">
-                <p>HTML5, CSS3, jQuery, Javascript, Wordpress, Drupal, AWS, PHP, Mysql, Subversion, Git</p>
-              </aside>
-              <hr>
-              <div class="col-sm-12 col-md-12 col-lg-12">
-                <h2>Community Engine <small>2012 - 2013</small></h2>
-                <h3>Lead Web Developer</h3>
-                <p>Senior solutions architect using mainly Wordpress as the base platform.
-                    Deployment and configuration on production environments.
-                    Management of AWS as development, staging and production environments</p>
-              </div>
-              <aside class="col-sm-12 col-md-12 col-lg-12">
-                <p>HTML5, CSS3, jQuery, Javascript, Wordpress, AWS, PHP, Mysql, Subversion</p>
-              </aside>
-              <hr>
-              <div class="col-sm-12 col-md-12 col-lg-12">
-                <h2>Ziller <small>2010 - 2012</small></h2>
-                <h3>Senior Web Developer</h3>
-                <p>Administration of servers (Linux). Documentation of Software Requirements Specification and Technical Requirements. Client management (personal and telephone meetings). Lead developer for proprietary e-commerce platform (Zorilla) developed with Zend Framework 1.11. Managing AWS environments</p>
-              </div>
-              <aside class="col-sm-12 col-md-12 col-lg-12">
-                <p>HTML5, CSS3, jQuery, Javascript, ZEND Framework, AWS, PHP, Mysql, Subversion, Mentoring</p>
-              </aside>
-              <hr>
-              <div class="col-sm-12 col-md-12 col-lg-12">
-                <h2>Websalad <small>2008 - 2010</small></h2>
-                <h3>Web Developer</h3>
-                <p>Software Requirements Specification and Technical Requirements. Client management (personal and telephone meetings). Sites installation and maintenance. CMS Modules/plugins Development (WordPress, Liferay and DotNetNuke). Debug and resolve technical/coding problems. System administrator (Linux - Ubuntu). Database Manager (Mysql).</p>
-              </div>
-              <aside class="col-sm-12 col-md-12 col-lg-12">
-                <p>HTML, CSS, jQuery, Javascript, ZEND Framework, Wordpress, Joomla, PHP, Mysql, Subversion, Mentoring, Java</p>
-              </aside>
-              <hr>
-              <div class="col-sm-12 col-md-12 col-lg-12">
-                <h2>Laranda <small>2008 - 2008</small></h2>
-                <h3>Solutions Architect</h3>
-                <p>Within larand they were managing their client database using MS-ACCESS. I was introduce to the company to connect the website with the database in which I was the main architect of the new information structure.</p>
-              </div>
-              <aside class="col-sm-12 col-md-12 col-lg-12">
-                <p>HTML, CSS, jQuery, Javascript, MS-ACCESS, Mysql</p>
-              </aside>
-              <hr>
-              <div class="col-sm-12 col-md-12 col-lg-12">
-                <h2>IT-Group <small>2005 - 2008</small></h2>
-                <h3>Senior Web Developer</h3>
-                <p>After finishing my studies at university I was approach by IT-Group to develop software usinf PHP and J2EE. Here I managed a small group of developers that were involved in multiple projects.</p>
-                <p>With IT-GROUP we developed a ticketing system for the goverment and a monitoring tool to track KPI's within the different areas of education branch.</p>
-              </div>
-              <aside class="col-sm-12 col-md-12 col-lg-12">
-                <p>J2EE, PHP, ASP, .NET, Oracle 10g, MySQL, SQL Server, OC4J, IIS, APACHE</p>
-              </aside>
-              <hr>
-
             </div>
             <div role="tabpanel" class="tab-pane" id="projects">
               <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-6">
-                  <h2>Vivid Sydney <small>2015</small></h2>
-                  <h3>Drupal, CSS3, Javascript</h3>
-                  <p>Within this project my team and I developed a Drupal theme to manage the information of the festival.</p>
-                  <aside>
-                    <p><a href="http://www.vividsydney.com" rel="nofollow" target="__blank" >Website</a></p>
-                  </aside>
+                <div v-for="project in projects">
+                  <div class="col-sm-12 col-md-6 col-lg-6">
+                    <h2>{{project.name}} <small>{{project.date}}</small></h2>
+                    <h3>{{project.technologies}}</h3>
+                    <p>{{project.description}}</p>
+                    <aside>
+                      <p><a href="{{project.link}}" rel="nofollow" target="__blank" >Website</a> developed with: {{project.company}}</p>
+                    </aside>
+                  </div>
+                  <hr class="hidden-md hidden-lg">
                 </div>
-                <hr class="hidden-md hidden-lg">
                 <div class="col-sm-12 col-md-6 col-lg-6">
                   <h2>Great Eastern Ranges <small>2014</small></h2>
                   <h3>Wordpress, CSS3, Javascript</h3>
@@ -182,25 +141,18 @@
               </div>
             </div>
           </div>
-
         </div>
-
-
-
-        
         <hr>
         <div class="row">
             <div class="col-sm-12">
                 <footer>
-                    <p>2015 Juan Camilo Zapata</p>
+                    <p>2016 Juan Camilo Zapata</p>
                 </footer>
             </div>
         </div>
     </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dist/bootstrap.min.js"></script>
+    <script src="js/dist/output.min.js"></script>
   </body>
 </html>
