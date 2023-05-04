@@ -1,31 +1,16 @@
 {
-  "name": "personal",
-  "version": "1.0.0",
-  "description": "Juan Zapata site",
-  "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/juankk/juankk.github.io"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/juankk/juankk.github.io/issues"
-  },
-  "homepage": "https://github.com/juankk/juankk.github.io",
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "font-awesome": "^4.6.3",
-    "vue": "^2.0.3"
-  },
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-cli": "^1.2.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^1.0.0"
+    "autoprefixer": "^10.4.14",
+    "concurrently": "^8.0.1",
+    "live-server": "^1.2.2",
+    "postcss": "^8.4.23",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.3.2"
+  },
+  "scripts": {
+    "serve": "concurrently \"postcss css/tailwind.css -o src/dist/main.min.css --watch\"  \"live-server .\"",
+    "development": "postcss css/tailwind.css -o src/dist/main.min.css",
+    "production": "postcss css/tailwind.css -o src/dist/main.min.css",
+    "start": "npm run serve"
   }
 }
